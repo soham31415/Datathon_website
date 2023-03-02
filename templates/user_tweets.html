@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+	<link rel="stylesheet" type="text/css" href="static\register.css">
+{% endblock css %}
+
+{% block content %}
+
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form action="" method="POST">
+                {{ form.hidden_tag() }}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Join today</legend>
+                    <div class="form-group">
+                        {{ form.twitter_username.label(class="form-control-label") }}
+                        {{ form.twitter_username(class="form-control form-control-lg") }}
+                    </div>
+
+                    
+                </fieldset>
+                <div class="form-group">
+                    {{ form.submit(class="btn btn-primary btn-lg") }}
+                </div>
+
+                {% if display %}
+                    <div class="justify-content-center">
+                        <p>The tweet is: {{ display.content }}</p>
+                    </div>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
